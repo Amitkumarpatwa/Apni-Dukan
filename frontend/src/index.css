@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background-color: #020617; /* slate-950 */
+  color: #f8fafc; /* slate-50 */
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Swiper Pagination Overrides - Flipkart style */
+.custom-swiper .swiper-pagination {
+  bottom: 8px !important;
+}
+
+.custom-swiper .swiper-pagination-bullet {
+  background: #cbd5e1;
+  opacity: 0.6;
+  width: 6px;
+  height: 6px;
+  margin: 0 4px !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  background: #fff;
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+}
+
