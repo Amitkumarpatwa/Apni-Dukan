@@ -1,0 +1,9 @@
+node_modules
+.git
+.env
+npm-debug.log
+Dockerfile
+.dockerignore
+frontend/dist
+backend/node_modules
+frontend/node_modules
