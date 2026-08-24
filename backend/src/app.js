@@ -23,7 +23,7 @@ app.use("/api/auth", authRoutes);
 app.use(errorMiddleware);
 
 // Serve frontend in production
-if (process.env.NODE_ENV === "production" || process.env.SERVE_FRONTEND === "true") {
+if (process.env.SERVE_FRONTEND === "true") {
   // __dirname is backend/src, so we go up twice to backend and then to frontend/dist
   // or we configure docker to have them side-by-side
   // Since Docker will place frontend/dist alongside backend, we will use path.join
