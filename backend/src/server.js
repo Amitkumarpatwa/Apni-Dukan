@@ -16,6 +16,15 @@ const startServer = async () => {
 
     app.listen(PORT, () => {
       logger.info(`Server running on port ${PORT}`);
+      
+      // Auto-ping to prevent Render sleep (every 14 minutes)
+      if (process.env.RENDER_EXTERNAL_URL) {
+        setInterval(() => {
+          logger.info("Auto-pinging self to stay awake...");
+          fetch(`${process.env.RENDER_EXTERNAL_URL}/health`)
+            .catch(err => logger.error("Ping failed:", err.message));
+        }, 14 * 60 * 1000); // 14 minutes
+      }
     });
   } catch (error) {
     logger.error("Failed to start server:", error.message);
